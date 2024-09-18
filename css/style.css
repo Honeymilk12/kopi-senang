@@ -46,9 +46,9 @@ body {
 
 .navbar .navbar-nav a {
   color: #fff;
-  display: inline-block block;
+  display: inline-block;
   font-size: 1.4rem;
-  margin: 0 0.5rem;
+  margin: 0 0.8rem;
 }
 
 .navbar .navbar-nav a:hover {
@@ -88,6 +88,50 @@ body {
   display: none;
 }
 
+/* navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+}
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
 /*hero section*/
 .hero {
   min-height: 100vh;
@@ -158,13 +202,15 @@ body {
 
 .about,
 .menu,
-.Kontak {
+.Kontak,
+.products {
   padding: 8rem 7% 1.4rem;
 }
 
 .about h2,
 .menu h2,
-.Kontak h2 {
+.Kontak h2,
+.products {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
@@ -172,7 +218,8 @@ body {
 
 .about h2 span,
 .menu h2 span,
-.Kontak h2 span {
+.Kontak h2 span,
+.products h2 span {
   color: var(--primary);
 }
 
@@ -264,6 +311,49 @@ body {
 
 .menu .row .menu-card .menu-card-title {
   margin: 1.5rem auto 0.5rem;
+}
+
+/* Products Section */
+.products .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: o.5rem;
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 /* kontak section */
@@ -369,50 +459,61 @@ a {
   html {
     font-size: 62.5%;
   }
-}
 
-#hamburger-menu {
-  display: inline-block;
-}
-.navbar .navbar-nav {
-  position: absolute;
-  top: 100%;
-  right: -100%;
-  background-color: #fff;
-  width: 30rem;
-  height: 100vh;
-}
+  #hamburger-menu {
+    display: inline-block;
+  }
 
-.navbar .navbar-nav.active {
-  right: 0%;
-}
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+  }
 
-.navbar .navbar-nav a {
-  color: var(--bg);
-  display: block;
-  margin: 1.5rem;
-  padding: 0.5rem;
-  font-size: 2rem;
-}
+  .navbar .navbar-nav.active {
+    right: 0%;
+  }
 
-.navbar .navbar-nav a::after {
-  transform-origin: 0 0;
-}
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
 
-.navbar .navbar-nav a:hover ::after {
-  transform: scaleX(0.2);
-  -webkit-transform: scaleX(0.2);
-  -moz-transform: scaleX(0.2);
-  -ms-transform: scaleX(0.2);
-  -o-transform: scaleX(0.2);
-}
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
 
-.Kontak .row {
-  flex-wrap: wrap;
-}
+  .navbar .navbar-nav a:hover ::after {
+    transform: scaleX(0.2);
+    -webkit-transform: scaleX(0.2);
+    -moz-transform: scaleX(0.2);
+    -ms-transform: scaleX(0.2);
+    -o-transform: scaleX(0.2);
+  }
 
-.Kontak .row .map {
-  height: 30rem;
+  .navbar .search-form {
+    width: 90%;
+    right: 2remS;
+  }
+
+  .Kontak .row {
+    flex-wrap: wrap;
+  }
+
+  .Kontak .row .map {
+    height: 30rem;
+  }
 }
 
 /*mobile phone*/
